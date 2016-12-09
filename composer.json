@@ -1,0 +1,11 @@
+{
+  "name": "ishworkh/nested-looper",
+  "description": "Provides a way to loop through nested arrays with unknown depth",
+  "version": "1.0.0",
+  "autoload" : {
+      "psr-4": {"ArrayIterator\\": "Source/"}
+  },
+  "require_dev": {
+      "phpunit/phpunit": "5.5.*"
+  }
+}
