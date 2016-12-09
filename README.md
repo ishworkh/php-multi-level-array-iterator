@@ -1,7 +1,7 @@
 # (PHP) Multi Level Array Iterator
 
 There are times when there is a need to iterate over an array unknown about the level of nested array it contains.
-Multi Level Array Iterator lets u do that.
+Multi Level Array Iterator lets u do that. The functionalities are properly tested.
 
 ## Basic Usage
 ```php

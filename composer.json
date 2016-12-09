@@ -1,7 +1,15 @@
 {
-  "name": "ishworkh/nested-looper",
-  "description": "Provides a way to loop through nested arrays with unknown depth",
+  "name": "ishworkh/multi-level-array-iterator",
+  "description": "Provides a way to loop through nested arrays with any depth",
   "version": "1.0.0",
+  "keywords": ["php", "iterator", "array", "multi-level"],
+  "authors": [
+    {
+        "name": "Ishwor Khadka",
+        "email": "ishworkh@gmail.com",
+        "role": "developer"
+    }
+  ],
   "autoload" : {
       "psr-4": {"ArrayIterator\\": "Source/"}
   },
