@@ -1,7 +1,7 @@
 # (PHP) Multi Level Array Iterator
 
 There are times when there is a need to iterate over an array unknown about the level of nested array it contains.
-Multi Level Array Iterator lets u do that. The functionalities are properly tested.
+Multi Level Array Iterator lets u do that. The functionality support associative array and are properly tested. 
 
 ## Basic Usage
 ```php
@@ -31,23 +31,23 @@ $array = [
     ]
 ];
 
-foreach(\ArrayIterator\MultiLevelArrayIterator::iterate($array) as $ArrayItem)
+foreach(\ArrayIterator\MultiLevelArrayIterator::iterate($array) as $key => $ArrayItem)
 {
-    echo $ArrayItem->getValue() . "\n";
+    echo $key . ' - ' . $ArrayItem->getValue() . "\n";
 }
 
 Result:
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
+    0 - 1
+    1 - 2
+    0 - 3
+    1 - 4
+    0 - 5
+    1 - 6
+    0 - 7
+    1 - 8
+    0 - 9
+    0 - 10
+    2 - 11
 ```
 
 ## Advanced
