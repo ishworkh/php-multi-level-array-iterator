@@ -1,7 +1,7 @@
 {
   "name": "ishworkh/multi-level-array-iterator",
   "description": "Provides a way to loop through nested arrays with any depth",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "keywords": ["php", "iterator", "array", "multi-level"],
   "authors": [
     {
