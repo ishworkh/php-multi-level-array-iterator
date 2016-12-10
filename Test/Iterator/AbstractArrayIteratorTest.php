@@ -36,8 +36,8 @@ abstract class AbstractArrayIteratorTest extends \PHPUnit_Framework_TestCase
     {
         $Iterator = $this->createArrayIterator($array, $this->_createArrayElementFactory(), $this->_createKeyHierarchyFactory());
 
-        foreach ($Iterator->getElements() as $ArrayElement) {
-
+        foreach ($Iterator->getElements() as $key => $ArrayElement) {
+            self::assertSame($key, $ArrayElement->getKeysHierarchy()->getParentKey(0));
             self::assertSame($ArrayElement->getValue(), $flattened[$ArrayElement->getKeysHierarchy()->__toString()]);
         }
     }

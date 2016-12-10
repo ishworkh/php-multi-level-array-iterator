@@ -28,13 +28,13 @@ class ArrayIterator extends AbstractArrayIterator
         foreach ($array as $key => $value) {
             $NewKeyHierarchy = $this->cloneKeyHierarchy($KeyHierarchy)->addKey($key);
             if (!is_array($value)) {
-                yield $this->createArrayElement(
+                yield $key => $this->createArrayElement(
                     $value,
                     $NewKeyHierarchy
                 );
             } else {
-                foreach ($this->goThroughArray($value, $NewKeyHierarchy) as $ArrayElement) {
-                    yield $ArrayElement;
+                foreach ($this->goThroughArray($value, $NewKeyHierarchy) as $key => $ArrayElement) {
+                    yield $key => $ArrayElement;
                 }
             }
         }

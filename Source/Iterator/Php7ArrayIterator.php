@@ -28,7 +28,7 @@ class Php7ArrayIterator extends AbstractArrayIterator
         foreach ($array as $key => $value) {
             $NewKeyHierarchy = $this->cloneKeyHierarchy($KeyHierarchy)->addKey($key);
             if (!is_array($value)) {
-                yield $this->createArrayElement(
+                yield $key => $this->createArrayElement(
                     $value,
                     $NewKeyHierarchy
                 );
