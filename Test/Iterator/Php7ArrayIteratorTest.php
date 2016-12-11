@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author  Ishwor Khadka <ishworkh@gmail.com>
  * @created 2016-12-09
  */
 
@@ -14,7 +14,7 @@ use ArrayIterator\Iterator\Php7ArrayIterator;
 use ArrayIterator\KeyHierarchy\KeyHierarchyFactory;
 
 /**
- * @author Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author Ishwor Khadka <ishworkh@gmail.com>
  * @see    Php7ArrayIterator
  */
 class Php7ArrayIteratorTest extends AbstractArrayIteratorTest

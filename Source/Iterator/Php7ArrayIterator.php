@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author  Ishwor Khadka <ishworkh@gmail.com>
  * @created 2016-12-09
  */
 
@@ -11,7 +11,7 @@ use ArrayIterator\KeyHierarchy\KeyHierarchy;
 use Generator;
 
 /**
- * @author Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author Ishwor Khadka <ishworkh@gmail.com>
  * @see    Unittest\Php7ArrayIteratorTest
  * @see    Test\Php7ArrayIteratorTest
  */

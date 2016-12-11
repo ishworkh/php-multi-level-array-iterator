@@ -71,4 +71,23 @@ class ArrayIteratorLocator
 
         return $this->_KeyHierarchyFactory;
     }
+
+    /**
+     * @var ArrayIteratorFactory
+     */
+    private $_ArrayIteratorFactory;
+
+    /**
+     * @return ArrayIteratorFactory
+     */
+    public function getArrayIteratorFactory()
+    {
+        if (null === $this->_ArrayIteratorFactory) {
+            $this->_ArrayIteratorFactory = new ArrayIteratorFactory(
+                $this->getArrayElementFactory(), $this->getKeyHierarchyFactory()
+            );
+        }
+
+        return $this->_ArrayIteratorFactory;
+    }
 }

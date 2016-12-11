@@ -7,12 +7,11 @@
 namespace ArrayIterator;
 
 use ArrayIterator\ArrayElement\ArrayElementInterface;
-use ArrayIterator\Iterator\ArrayIterator;
 
 /**
  * @author Ishwor Khadka <ishworkh@gmail.com>
  */
-class MultiLevelArrayIterator
+class ArrayIteratorFacade
 {
     /**
      * @param array $array
@@ -22,9 +21,7 @@ class MultiLevelArrayIterator
     public static function iterate(array $array)
     {
         $Locator       = ArrayIteratorLocator::getInstance();
-        $ArrayIterator = new ArrayIterator(
-            $array, $Locator->getArrayElementFactory(), $Locator->getKeyHierarchyFactory()
-        );
+        $ArrayIterator = $Locator->getArrayIteratorFactory()->createIterator($array);
 
         return $ArrayIterator->getElements();
     }

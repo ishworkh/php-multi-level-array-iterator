@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author  Ishwor Khadka <ishworkh@gmail.com>
  * @created 2016-12-09
  */
 
@@ -16,7 +16,7 @@ use ArrayIterator\KeyHierarchy\KeyHierarchyFactory;
 use PHPUnit_Framework_MockObject_MockObject;
 
 /**
- * @author Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author Ishwor Khadka <ishworkh@gmail.com>
  */
 abstract class AbstractArrayIteratorTest extends BaseUnittest
 {

@@ -1,6 +1,6 @@
 <?php
 
-use ArrayIterator\MultiLevelArrayIterator;
+use ArrayIterator\ArrayIteratorFacade;
 
 require_once __DIR__ . '/vendor/autoload.php';
 $before = memory_get_usage();
@@ -47,10 +47,10 @@ $array = [
 
 $after = memory_get_usage();
 var_dump($after - $before);
-foreach (MultiLevelArrayIterator::iterate(($array)) as $index => $ArrayElement)
+foreach (ArrayIteratorFacade::iterate(($array)) as $index => $ArrayElement)
 {
     echo $ArrayElement->getValue();
-    echo '|||||||';
+    echo '----';
     echo $ArrayElement->getKeysHierarchy()->getHierarchyLevel();
     echo "\n";
 }

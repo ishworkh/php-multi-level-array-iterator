@@ -1,7 +1,7 @@
 # (PHP) Multi Level Array Iterator
 
-There are times when there is a need to iterate over an array unknown about the level of nested array it contains.
-Multi Level Array Iterator lets u do that. The functionality support associative array and are properly tested. 
+There are times when there is a need to iterate over an array being unknown about the level of nested array it contains.
+Multi Level Array Iterator lets u do that. This functionality supports associative array and is properly tested. 
 
 ## Basic Usage
 ```php
@@ -31,7 +31,7 @@ $array = [
     ]
 ];
 
-foreach(\ArrayIterator\MultiLevelArrayIterator::iterate($array) as $key => $ArrayItem)
+foreach(\ArrayIterator\ArrayIteratorFacade::iterate($array) as $key => $ArrayItem)
 {
     echo $key . ' - ' . $ArrayItem->getValue() . "\n";
 }
@@ -52,15 +52,15 @@ Result:
 
 ## Advanced
 
-```\ArrayIterator\MultiLevelArrayIterator::iterate($array)``` returns a generator of ```ArrayElementInterface```.
+```\ArrayIterator\ArrayIteratorFacade::iterate($array)``` returns a generator of ```ArrayElementInterface```.
 
 ```ArrayElementInterface``` provides
-   1. getValue()
-   2. getKeyHierarchy()
+   1. getValue():mixed
+   2. getKeyHierarchy():KeyHierarchyInterface
        - getParentKey(int $parentLevel): string
        - getHierarchyLevel(): int
 
 Note:
-    For debugging purpose, echo ing  ``` KeyHierarchyInterface ``` prints out strings which indicates hierarchical
-    keys gradually from root array to nested children arrays, separated by '-'.
+    For debugging purpose, echoing  ``` KeyHierarchyInterface ``` prints out string representation of keys hierarchy
+    starting from root array separated by '-'.
 

@@ -1,13 +1,13 @@
 <?php
 /**
- * @author  Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author  Ishwor Khadka <ishworkh@gmail.com>
  * @created 2016-12-09
  */
 
 namespace Unittest;
 
 use ArrayIterator\ArrayElement\ArrayElementFactory;
-use ArrayIterator\ArrayIteratorManager;
+use ArrayIterator\ArrayIteratorFactory;
 use ArrayIterator\Iterator\ArrayIterator;
 use ArrayIterator\Iterator\Php7ArrayIterator;
 use ArrayIterator\KeyHierarchy\KeyHierarchyFactory;
@@ -16,10 +16,10 @@ use PHPUnit_Framework_MockObject_MockObject;
 require_once __DIR__ . '/BaseUnittest.php';
 
 /**
- * @author Ishwor Khadka <ishwor.khadka@kiosked.com>
- * @see    TODO
+ * @author Ishwor Khadka <ishworkh@gmail.com>
+ * @see    ArrayIteratorFactory
  */
-class ArrayIteratorManagerTest extends BaseUnittest
+class ArrayIteratorFactoryTest extends BaseUnittest
 {
     /**
      * @param string $version
@@ -35,7 +35,7 @@ class ArrayIteratorManagerTest extends BaseUnittest
         {
             self::markTestSkipped(true);
         }
-        $Manager = $this->_createArrayIteratorManager();
+        $Manager = $this->_createArrayIteratorFactory();
         $Manager->expects(self::once())
             ->method('getPhpVersion')
             ->willReturn($version);
@@ -58,11 +58,11 @@ class ArrayIteratorManagerTest extends BaseUnittest
     }
 
     /**
-     * @return PHPUnit_Framework_MockObject_MockObject|ArrayIteratorManager
+     * @return PHPUnit_Framework_MockObject_MockObject|ArrayIteratorFactory
      */
-    private function _createArrayIteratorManager()
+    private function _createArrayIteratorFactory()
     {
-        $Mock = $this->getMockBuilder(ArrayIteratorManager::class)
+        $Mock = $this->getMockBuilder(ArrayIteratorFactory::class)
             ->setConstructorArgs(
                 [
                     $this->_createMockedArrayElementFactory(),

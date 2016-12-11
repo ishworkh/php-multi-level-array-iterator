@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author  Ishwor Khadka <ishworkh@gmail.com>
  * @created 2016-12-09
  */
 
@@ -13,7 +13,7 @@ use ArrayIterator\Iterator\ArrayIteratorInterface;
 use ArrayIterator\KeyHierarchy\KeyHierarchyFactory;
 
 /**
- * @author Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author Ishwor Khadka <ishworkh@gmail.com>
  */
 abstract class AbstractArrayIteratorTest extends \PHPUnit_Framework_TestCase
 {

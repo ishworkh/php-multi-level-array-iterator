@@ -1,11 +1,10 @@
 <?php
 /**
- * @author  Ishwor Khadka <ishwor.khadka@kiosked.com>
+ * @author  Ishwor Khadka <ishworkh@gmail.com>
  * @created 2016-12-09
  */
 
 namespace ArrayIterator;
-
 
 use ArrayIterator\ArrayElement\ArrayElementFactory;
 use ArrayIterator\Iterator\ArrayIterator;
@@ -13,12 +12,11 @@ use ArrayIterator\Iterator\Php7ArrayIterator;
 use ArrayIterator\KeyHierarchy\KeyHierarchyFactory;
 
 /**
- * @author Ishwor Khadka <ishwor.khadka@kiosked.com>
- * @see    TODO
+ * @author Ishwor Khadka <ishworkh@gmail.com>
+ * @see    Unittest\ArrayIteratorFactoryTest
  */
-class ArrayIteratorManager
+class ArrayIteratorFactory
 {
-
     /***
      * @var ArrayElementFactory
      */
@@ -30,7 +28,7 @@ class ArrayIteratorManager
     private $_KeyHierarchyFactory;
 
     /**
-     * ArrayIteratorManager constructor.
+     * ArrayIteratorFactory constructor.
      *
      * @param ArrayElementFactory $ArrayElementFactory
      * @param KeyHierarchyFactory $KeyHierarchyFactory
