@@ -26,9 +26,6 @@
     }
   },
   "require": {
-    "php": "^5.5 || ^7.0"
-  },
-  "require_dev": {
-    "phpunit/phpunit": "5.5.*"
+    "php": ">=5.5"
   }
 }
