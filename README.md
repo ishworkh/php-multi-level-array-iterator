@@ -50,8 +50,6 @@ Result:
     2 - 11
 ```
 
-## Advanced
-
 ```\ArrayIterator\ArrayIteratorFacade::iterate($array)``` returns a generator of ```ArrayElementInterface```.
 
 ```ArrayElementInterface``` provides
@@ -59,6 +57,13 @@ Result:
    2. getKeyHierarchy():KeyHierarchyInterface
        - getParentKey(int $parentLevel): string
        - getHierarchyLevel(): int
+
+New instance of ```\ArrayIterator\Iterator\ArrayIterator``` can be created with ```\ArrayIterator\ArrayIteratorFactory``` which is accessible through
+```\ArrayIterator\ArrayIteratorLocator```. Both the facade or locator way can be used to get an instance of ArrayIterator. 
+
+It includes special support for laravel framework. For its integration with Laravel's dependency injection container ```\ArrayIterator\ArrayIteratorServiceProvider``` is available which 
+can be included in the lists of service providers in ```config/app.php```. After this, type hinting ```\ArrayIterator\ArrayIteratorFactory``` anywhere inside laravel app
+will resolve into ```\ArrayIterator\ArrayIteratorFactory``` properly.   
 
 Note:
     For debugging purpose, echoing  ``` KeyHierarchyInterface ``` prints out string representation of keys hierarchy

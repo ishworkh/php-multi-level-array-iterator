@@ -4,6 +4,7 @@
   "description": "Provides a way to loop through nested arrays with any depth",
   "keywords": [
     "php",
+    "laravel",
     "iterator",
     "array",
     "multi-level",
