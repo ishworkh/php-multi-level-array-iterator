@@ -4,18 +4,20 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator\KeyHierarchy;
 
 /**
  * @author Ishwor Khadka <ishworkh@gmail.com>
- * @see    Unittest\KeyHierarchy\KeyHierarchyTest\KeyHierarchyFactoryTest
+ * @see    \Unittest\KeyHierarchy\KeyHierarchyTest\KeyHierarchyFactoryTest
  */
 class KeyHierarchyFactory
 {
     /**
      * @return KeyHierarchy
      */
-    public function create()
+    public function create():KeyHierarchy
     {
         return new KeyHierarchy();
     }
@@ -25,7 +27,8 @@ class KeyHierarchyFactory
      *
      * @return KeyHierarchy
      */
-    public function createFromAnotherKeyHierarchy(KeyHierarchy $KeyHierarchy){
+    public function createFromAnotherKeyHierarchy(KeyHierarchy $KeyHierarchy):KeyHierarchy
+    {
         return clone $KeyHierarchy;
     }
 }

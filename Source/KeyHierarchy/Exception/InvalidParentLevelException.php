@@ -4,6 +4,8 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator\KeyHierarchy\Exception;
 
 /**
@@ -11,15 +13,15 @@ namespace ArrayIterator\KeyHierarchy\Exception;
  */
 class InvalidParentLevelException extends KeyHierarchyException
 {
-    const MESSAGE = 'Invalid parent level: %d';
+    private const _MESSAGE = 'Invalid parent level: %d';
 
     /**
      * @param int $parentLevel
      *
      * @return InvalidParentLevelException
      */
-    public static function create($parentLevel)
+    public static function create(int $parentLevel):InvalidParentLevelException
     {
-        return new self(sprintf(self::MESSAGE, $parentLevel));
+        return new self(sprintf(self::_MESSAGE, $parentLevel));
     }
 }

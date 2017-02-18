@@ -4,6 +4,8 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace Unittest\KeyHierarchy\KeyHierarchyTest;
 
 require_once __DIR__ . '/../BaseUnittest.php';
@@ -27,7 +29,7 @@ class KeyHierarchyFactoryTest extends BaseUnittest
 
     public function testCreateFromAnotherKeyHierarchy()
     {
-        $Factory      = new KeyHierarchyFactory();
+        $Factory = new KeyHierarchyFactory();
         $KeyHierarchy = $this->_createMockedKeyHierarchy();
 
         $NewKeyHierarchy = $Factory->createFromAnotherKeyHierarchy($KeyHierarchy);

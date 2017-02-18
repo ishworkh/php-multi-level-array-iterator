@@ -4,6 +4,8 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace Unittest\KeyHierarchy\KeyHierarchyTest;
 
 require_once __DIR__ . '/../BaseUnittest.php';
@@ -55,7 +57,7 @@ class KeyHierarchyTest extends BaseUnittest
 
     public function testGetParentKeyThrowsForInvalidParentLevel()
     {
-        $keys               = [1, 2, 4, 'sdfds', 'root'];
+        $keys = [1, 2, 4, 'sdfds', 'root'];
         $invalidParentLevel = count($keys);
 
         $KeyHierarchy = new KeyHierarchy($keys);

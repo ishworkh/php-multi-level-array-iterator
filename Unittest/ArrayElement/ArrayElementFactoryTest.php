@@ -4,6 +4,8 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace Unittest\ArrayElement;
 
 require_once __DIR__ . '/../BaseUnittest.php';

@@ -4,6 +4,8 @@
  * @created 2016-12-09
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator;
 
 use ArrayIterator\ArrayElement\ArrayElementFactory;
@@ -22,7 +24,7 @@ class ArrayIteratorLocator
     /**
      * @return ArrayIteratorLocator
      */
-    public static function getInstance()
+    public static function getInstance():ArrayIteratorLocator
     {
         if (null === self::$_Instance) {
             self::$_Instance = new self();
@@ -46,7 +48,7 @@ class ArrayIteratorLocator
     /**
      * @return ArrayElementFactory
      */
-    public function getArrayElementFactory()
+    public function getArrayElementFactory():ArrayElementFactory
     {
         if (null === $this->_ArrayElementFactory) {
             $this->_ArrayElementFactory = new ArrayElementFactory();
@@ -63,7 +65,7 @@ class ArrayIteratorLocator
     /**
      * @return KeyHierarchyFactory
      */
-    public function getKeyHierarchyFactory()
+    public function getKeyHierarchyFactory():KeyHierarchyFactory
     {
         if (null === $this->_KeyHierarchyFactory) {
             $this->_KeyHierarchyFactory = new KeyHierarchyFactory();
@@ -80,7 +82,7 @@ class ArrayIteratorLocator
     /**
      * @return ArrayIteratorFactory
      */
-    public function getArrayIteratorFactory()
+    public function getArrayIteratorFactory():ArrayIteratorFactory
     {
         if (null === $this->_ArrayIteratorFactory) {
             $this->_ArrayIteratorFactory = new ArrayIteratorFactory(

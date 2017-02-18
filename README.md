@@ -1,7 +1,7 @@
 # (PHP) Multi Level Array Iterator
 
 There are times when there is a need to iterate over an array being unknown about the level of nested array it contains.
-Multi Level Array Iterator lets u do that. This functionality supports associative array and is properly tested. 
+Multi Level Array Iterator lets u do that. This functionality supports associative array and is properly tested.
 
 ## Basic Usage
 ```php
@@ -66,6 +66,7 @@ can be included in the lists of service providers in ```config/app.php```. After
 will resolve into ```\ArrayIterator\ArrayIteratorFactory``` properly.   
 
 Note:
-    For debugging purpose, echoing  ``` KeyHierarchyInterface ``` prints out string representation of keys hierarchy
+    - For debugging purpose, echoing  ``` KeyHierarchyInterface ``` prints out string representation of keys hierarchy
     starting from root array separated by '-'.
+    - Upgraded to php7
 

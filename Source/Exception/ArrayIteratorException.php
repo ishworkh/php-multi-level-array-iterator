@@ -4,6 +4,8 @@
  * @created 2016-12-07
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator\Exception;
 
 use Exception;

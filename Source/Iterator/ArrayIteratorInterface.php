@@ -4,6 +4,8 @@
  * @created 2016-12-07
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator\Iterator;
 
 use ArrayIterator\ArrayElement\ArrayElementInterface;
@@ -17,5 +19,5 @@ interface ArrayIteratorInterface
     /**
      * @return Generator|ArrayElementInterface[]
      */
-    public function getElements();
+    public function getElements():Generator;
 }

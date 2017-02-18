@@ -4,13 +4,15 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator\KeyHierarchy;
 
 use ArrayIterator\KeyHierarchy\Exception\InvalidParentLevelException;
 
 /**
  * @author Ishwor Khadka <ishworkh@gmail.com>
- * @see    Unittest\KeyHierarchy\KeyHierarchyTest\KeyHierarchyTest
+ * @see    \Unittest\KeyHierarchy\KeyHierarchyTest\KeyHierarchyTest
  */
 class KeyHierarchy implements KeyHierarchyInterface
 {
@@ -24,9 +26,9 @@ class KeyHierarchy implements KeyHierarchyInterface
     /**
      * @param string|int $key
      *
-     * @return $this
+     * @return KeyHierarchy
      */
-    public function addKey($key)
+    public function addKey($key):self
     {
         $this->_keys[] = $key;
 
@@ -38,7 +40,7 @@ class KeyHierarchy implements KeyHierarchyInterface
      *
      * Level relative to root i.e. 0 for elements in base root array
      */
-    public function getHierarchyLevel()
+    public function getHierarchyLevel():int
     {
         return $this->_getLevel();
     }
@@ -46,7 +48,7 @@ class KeyHierarchy implements KeyHierarchyInterface
     /**
      * @return int
      */
-    private function _getLevel()
+    private function _getLevel():int
     {
         return count($this->_keys) - 1;
     }
@@ -59,7 +61,7 @@ class KeyHierarchy implements KeyHierarchyInterface
      * @return string|int
      * @throws InvalidParentLevelException
      */
-    public function getParentKey($parentLevel = 1)
+    public function getParentKey(int $parentLevel = 1)
     {
         $levelRelativeToRoot = $this->_convertParentLevelToHierarchyLevel($parentLevel);
         if (!array_key_exists($levelRelativeToRoot, $this->_keys)) {
@@ -74,7 +76,7 @@ class KeyHierarchy implements KeyHierarchyInterface
      *
      * @return int
      */
-    private function _convertParentLevelToHierarchyLevel($parentLevel)
+    private function _convertParentLevelToHierarchyLevel(int $parentLevel):int
     {
         return $this->_getLevel() - $parentLevel;
     }
@@ -84,7 +86,7 @@ class KeyHierarchy implements KeyHierarchyInterface
      *
      * For debugging purpose
      */
-    public function __toString()
+    public function __toString():string
     {
         return implode('-', $this->_keys);
     }

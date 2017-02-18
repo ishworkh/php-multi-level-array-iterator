@@ -4,13 +4,15 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator\ArrayElement;
 
 use ArrayIterator\KeyHierarchy\KeyHierarchyInterface;
 
 /**
  * @author Ishwor Khadka <ishworkh@gmail.com>
- * @see    Unittest\ArrayElement\ArrayElementTest
+ * @see    \Unittest\ArrayElement\ArrayElementTest
  */
 class ArrayElement implements ArrayElementInterface
 {
@@ -27,12 +29,12 @@ class ArrayElement implements ArrayElementInterface
     /**
      * ArrayElement constructor.
      *
-     * @param mixed                 $value
+     * @param mixed $value
      * @param KeyHierarchyInterface $KeyHierarchy
      */
     public function __construct($value, KeyHierarchyInterface $KeyHierarchy)
     {
-        $this->_value        = $value;
+        $this->_value = $value;
         $this->_KeyHierarchy = $KeyHierarchy;
     }
 
@@ -44,11 +46,10 @@ class ArrayElement implements ArrayElementInterface
         return $this->_value;
     }
 
-
     /**
      * @return KeyHierarchyInterface
      */
-    public function getKeysHierarchy()
+    public function getKeysHierarchy():KeyHierarchyInterface
     {
         return $this->_KeyHierarchy;
     }

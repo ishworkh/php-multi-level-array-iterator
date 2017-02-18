@@ -4,16 +4,17 @@
  * @created 2016-12-09
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator;
 
 use ArrayIterator\ArrayElement\ArrayElementFactory;
 use ArrayIterator\Iterator\ArrayIterator;
-use ArrayIterator\Iterator\Php7ArrayIterator;
 use ArrayIterator\KeyHierarchy\KeyHierarchyFactory;
 
 /**
  * @author Ishwor Khadka <ishworkh@gmail.com>
- * @see    Unittest\ArrayIteratorFactoryTest
+ * @see    \Unittest\ArrayIteratorFactoryTest
  */
 class ArrayIteratorFactory
 {
@@ -42,22 +43,10 @@ class ArrayIteratorFactory
     /**
      * @param array $array
      *
-     * @return ArrayIterator|Php7ArrayIterator
+     * @return ArrayIterator
      */
-    public function createIterator(array $array)
+    public function createIterator(array $array):ArrayIterator
     {
-        if ($this->getPhpVersion() < 7) {
-            return new ArrayIterator($array, $this->_ArrayElementFactory, $this->_KeyHierarchyFactory);
-        }
-
-        return new Php7ArrayIterator($array, $this->_ArrayElementFactory, $this->_KeyHierarchyFactory);
-    }
-
-    /**
-     * @return string
-     */
-    protected function getPhpVersion()
-    {
-        return floatval(phpversion());
+        return new ArrayIterator($array, $this->_ArrayElementFactory, $this->_KeyHierarchyFactory);
     }
 }

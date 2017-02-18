@@ -4,6 +4,8 @@
  * @created 2016-12-08
  */
 
+declare(strict_types = 1);
+
 namespace Unittest\ArrayElement;
 
 require_once __DIR__ . '/../BaseUnittest.php';
@@ -29,7 +31,7 @@ class ArrayElementTest extends BaseUnittest
 
     public function testGetValue()
     {
-        $value        = 'value';
+        $value = 'value';
         $ArrayElement = new ArrayElement($value, $this->_createMockedKeyHierarchy());
 
         self::assertSame($value, $ArrayElement->getValue());
@@ -37,7 +39,7 @@ class ArrayElementTest extends BaseUnittest
 
     public function testGetKeysHierarchy()
     {
-        $Hierarchy    = $this->_createMockedKeyHierarchy();
+        $Hierarchy = $this->_createMockedKeyHierarchy();
         $ArrayElement = new ArrayElement('value', $Hierarchy);
 
         self::assertSame($Hierarchy, $ArrayElement->getKeysHierarchy());

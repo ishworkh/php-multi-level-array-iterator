@@ -15,8 +15,8 @@ class ArrayIteratorServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(ArrayIteratorFactory::class, function(){
-           return ArrayIteratorLocator::getInstance()->getArrayIteratorFactory();
+        $this->app->singleton(ArrayIteratorFactory::class, function () {
+            return ArrayIteratorLocator::getInstance()->getArrayIteratorFactory();
         });
     }
 }

@@ -4,6 +4,8 @@
  * @created 2016-12-07
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator\ArrayElement;
 
 use ArrayIterator\KeyHierarchy\KeyHierarchyInterface;
@@ -21,5 +23,5 @@ interface ArrayElementInterface
     /**
      * @return KeyHierarchyInterface
      */
-    public function getKeysHierarchy();
+    public function getKeysHierarchy():KeyHierarchyInterface;
 }

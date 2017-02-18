@@ -4,26 +4,30 @@
  * @created 2016-12-09
  */
 
+declare(strict_types = 1);
+
 namespace ArrayIterator;
 
 use ArrayIterator\ArrayElement\ArrayElementInterface;
+use Generator;
 
 /**
  * @author Ishwor Khadka <ishworkh@gmail.com>
+ * @see \Test\ArrayIteratorFacadeTest
  */
 class ArrayIteratorFacade
 {
     /**
      * @param array $array
      *
-     * @return ArrayElementInterface[]|\Generator
+     * @return ArrayElementInterface[]|Generator
      */
-    public static function iterate(array $array)
+    public static function iterate(array $array):Generator
     {
-        $Locator       = ArrayIteratorLocator::getInstance();
+        $Locator = ArrayIteratorLocator::getInstance();
         $ArrayIterator = $Locator->getArrayIteratorFactory()->createIterator($array);
 
-        return $ArrayIterator->getElements();
+        yield from $ArrayIterator->getElements();
     }
 
 }
